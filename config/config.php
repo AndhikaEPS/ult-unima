@@ -7,8 +7,12 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// Base URL otomatis terdeteksi (aman untuk subfolder hosting/localhost)
-$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https://' : 'http://';
+// Base URL otomatis terdeteksi (aman untuk subfolder hosting/localhost/reverse proxy seperti Railway)
+$isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+    || (!empty($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https')
+    || (!empty($_SERVER['SERVER_PORT']) && (int) $_SERVER['SERVER_PORT'] === 443);
+$protocol = $isHttps ? 'https://' : 'http://';
+
 $scriptDir = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'])), '/');
 // Jika request datang dari dalam folder admin/ atau api/, naik satu level
 $baseDir = preg_replace('#/(admin|api)$#', '', $scriptDir);
