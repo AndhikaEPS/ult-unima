@@ -1,0 +1,17 @@
+{
+  "name": "unima/ult-sistem-layanan-digital",
+  "description": "Sistem Informasi Layanan Digital - Unit Layanan Terpadu Universitas Negeri Manado",
+  "type": "project",
+  "require": {
+    "php": ">=8.0",
+    "ext-pdo": "*",
+    "ext-pdo_mysql": "*",
+    "ext-mbstring": "*",
+    "ext-fileinfo": "*"
+  },
+  "config": {
+    "platform": {
+      "php": "8.2"
+    }
+  }
+}
