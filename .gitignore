@@ -1,0 +1,16 @@
+# Environment & konfigurasi sensitif
+.env
+
+# File yang diunggah pengguna (jangan ikut di-commit ke Git)
+uploads/*
+!uploads/.gitkeep
+!uploads/.htaccess
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Log
+*.log

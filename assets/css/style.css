@@ -1,0 +1,321 @@
+:root {
+  --navy-dark: #0d2d7a;
+  --navy: #123a8f;
+  --blue-cyan: #38bdf8;
+  --indigo: #6366f1;
+  --indigo-light: #7c7ff2;
+  --text-dark: #1f2937;
+  --bg-light: #f4f6f9;
+  --radius-lg: 22px;
+  --shadow-hard: 6px 6px 0px rgba(0,0,0,0.85);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  background: var(--bg-light);
+  color: var(--text-dark);
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 40px;
+  background: linear-gradient(90deg, var(--navy-dark) 0%, var(--blue-cyan) 100%);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.navbar .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 1.15rem; }
+.navbar .brand img { height: 42px; width: 42px; border-radius: 50%; background: #fff; }
+.nav-links { display: flex; gap: 6px; }
+.nav-links a {
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-weight: 500;
+  color: #eaf3ff;
+  transition: background .2s;
+}
+.nav-links a:hover { background: rgba(255,255,255,0.15); }
+.nav-links a.active { background: var(--navy-dark); color: #fff; font-weight: 600; }
+.nav-right { display: flex; align-items: center; gap: 14px; }
+.btn-login {
+  background: var(--navy-dark);
+  color: #fff;
+  padding: 9px 24px;
+  border-radius: 20px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+.avatar-circle {
+  width: 38px; height: 38px; border-radius: 50%;
+  background: rgba(255,255,255,0.25);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; color: #fff;
+}
+.hamburger { display: none; background: none; border: none; color: #fff; font-size: 1.6rem; cursor: pointer; }
+
+/* ---------- HERO (BERANDA) ---------- */
+.hero { padding: 60px 40px 30px; text-align: left; max-width: 1100px; margin: 0 auto; }
+.hero .greet { font-size: 2.1rem; font-weight: 400; margin: 0; color: #1f2937; }
+.hero h1 {
+  font-family: 'Anton', 'Poppins', sans-serif;
+  font-size: 3rem;
+  letter-spacing: .5px;
+  margin: 4px 0 10px;
+  text-transform: none;
+  font-weight: 800;
+}
+.hero .tagline { font-size: 1.05rem; color: #4b5563; margin-bottom: 40px; }
+
+.cta-wrap { text-align: center; margin: 30px 0 50px; }
+.btn-cta {
+  display: inline-block;
+  background: var(--navy-dark);
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 26px 60px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-hard);
+  border: none;
+  cursor: pointer;
+  transition: transform .15s;
+}
+.btn-cta:hover { transform: translate(-2px,-2px); box-shadow: 8px 8px 0px rgba(0,0,0,0.85); }
+
+/* ---------- STATS BAR ---------- */
+.stats-bar {
+  background: var(--navy-dark);
+  border-radius: var(--radius-lg);
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 30px;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.stat-box {
+  background: var(--indigo);
+  color: #fff;
+  border-radius: 18px;
+  flex: 1;
+  min-width: 220px;
+  padding: 26px 18px;
+  text-align: center;
+}
+.stat-box h4 { margin: 0 0 12px; font-size: .95rem; letter-spacing: 1px; font-weight: 700; }
+.stat-box .value { font-size: 2rem; font-weight: 800; }
+
+/* ---------- CONTAINER GENERIC ---------- */
+.page-wrap { max-width: 1200px; margin: 0 auto; padding: 40px 30px 70px; }
+.page-title { text-align: center; margin-bottom: 40px; }
+.page-title h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 6px; }
+.page-title .sub { color: #dc2626; font-weight: 700; font-size: 1.1rem; }
+
+/* ---------- LAYANAN CARDS ---------- */
+.layanan-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+.layanan-card {
+  background: var(--navy);
+  color: #fff;
+  border-radius: 18px;
+  padding: 26px 28px;
+  box-shadow: var(--shadow-hard);
+}
+.layanan-card h3 { font-size: 1.05rem; letter-spacing: .5px; margin-bottom: 16px; font-weight: 800; }
+.layanan-card ul { margin: 0; padding-left: 20px; }
+.layanan-card ul li { margin-bottom: 10px; line-height: 1.4; }
+
+/* ---------- PANDUAN GRID ---------- */
+.panduan-box {
+  background: linear-gradient(180deg,#dceeff,#eaf6ff);
+  border-radius: 40px;
+  padding: 40px;
+}
+.panduan-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+@media (max-width: 900px) { .panduan-grid { grid-template-columns: repeat(2,1fr); } }
+.panduan-step {
+  background: #d7ecfb;
+  border-radius: 16px;
+  padding: 16px;
+}
+.panduan-step h5 { font-size: .8rem; font-weight: 800; margin: 0 0 10px; }
+.panduan-step .icon-box {
+  background: #fff;
+  border-radius: 10px;
+  height: 130px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.4rem;
+  color: var(--navy);
+}
+
+/* ---------- TENTANG ---------- */
+.tentang-wrap { display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap; }
+.tentang-text { flex: 2; min-width: 280px; }
+.tentang-text h1 { font-size: 2.1rem; font-weight: 800; border-bottom: 3px solid var(--indigo); display: inline-block; padding-bottom: 10px; margin-bottom: 24px; }
+.tentang-text ol { padding-left: 22px; }
+.tentang-text li { font-weight: 700; margin-bottom: 6px; }
+.tentang-icon { flex: 1; min-width: 200px; text-align: center; font-size: 8rem; }
+
+/* ---------- FORM (AMBIL ANTRIAN) ---------- */
+.form-card {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+.form-card h2 { text-align: center; margin-bottom: 4px; }
+.form-card .desc { text-align: center; color: #6b7280; margin-bottom: 30px; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; font-weight: 600; margin-bottom: 8px; }
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  font-size: .95rem;
+  font-family: inherit;
+}
+.form-group textarea { resize: vertical; min-height: 80px; }
+.form-group small.hint { color: #9ca3af; }
+.upload-box {
+  border: 2px dashed #b6c3ff;
+  border-radius: 14px;
+  padding: 22px;
+  text-align: center;
+  color: #6b7280;
+  cursor: pointer;
+  background: #f7f9ff;
+}
+.upload-box.has-file { border-color: var(--indigo); color: var(--indigo); background: #eef0ff; }
+.btn-submit {
+  width: 100%;
+  padding: 16px;
+  background: var(--indigo);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  letter-spacing: .5px;
+}
+.btn-submit:hover { background: var(--indigo-light); }
+.alert { padding: 14px 18px; border-radius: 12px; margin-bottom: 20px; font-weight: 500; }
+.alert-error { background: #fee2e2; color: #991b1b; }
+.alert-success { background: #dcfce7; color: #166534; }
+
+/* ---------- TIKET ---------- */
+.tiket-card {
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--navy-dark);
+  color: #fff;
+  border-radius: 24px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: var(--shadow-hard);
+}
+.tiket-card .label { font-size: .85rem; opacity: .8; letter-spacing: 2px; }
+.tiket-card .nomor { font-size: 4rem; font-weight: 800; margin: 10px 0 20px; color: #7dd3fc; }
+.tiket-card .info-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.15); font-size: .92rem; }
+.tiket-actions { display: flex; gap: 12px; margin-top: 26px; }
+.tiket-actions a, .tiket-actions button {
+  flex: 1; padding: 12px; border-radius: 12px; border: none; font-weight: 700; cursor: pointer; text-align: center;
+}
+.btn-outline-light { background: transparent; border: 1px solid #fff !important; color: #fff; }
+.btn-fill-light { background: var(--indigo); color: #fff; }
+
+/* ---------- LOGIN ADMIN ---------- */
+.login-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--bg-light); padding: 20px; }
+.login-card {
+  background: var(--navy-dark);
+  color: #fff;
+  width: 100%;
+  max-width: 460px;
+  border-radius: 28px;
+  padding: 46px 40px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+.login-card img { height: 90px; margin-bottom: 14px; }
+.login-card h2 { margin: 0 0 4px; }
+.login-card .sub { opacity: .8; margin-bottom: 30px; }
+.login-card label { display: block; text-align: left; margin-bottom: 6px; opacity: .85; }
+.login-card input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: none;
+  margin-bottom: 20px;
+  font-size: .95rem;
+}
+.login-card .btn-submit { background: var(--indigo-light); border-radius: 12px; padding: 14px; font-weight: 700; }
+.login-card .back-link { display: block; margin-top: 20px; opacity: .8; font-size: .9rem; }
+
+/* ---------- PAPAN ANTRIAN (MONITOR) ---------- */
+.monitor-wrap { padding: 30px; max-width: 1100px; margin: 0 auto; }
+.monitor-current { background: var(--navy-dark); color: #fff; border-radius: 20px; padding: 40px; text-align: center; margin-bottom: 30px; }
+.monitor-current .no { font-size: 5rem; font-weight: 800; color: #7dd3fc; }
+.monitor-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px,1fr)); gap: 14px; }
+.monitor-list .item { background: var(--indigo); color: #fff; text-align: center; padding: 18px; border-radius: 14px; font-weight: 700; font-size: 1.3rem; }
+
+/* ---------- ADMIN DASHBOARD ---------- */
+.admin-shell { display: flex; min-height: 100vh; }
+.admin-sidebar { width: 240px; background: var(--navy-dark); color: #fff; padding: 26px 18px; flex-shrink: 0; }
+.admin-sidebar .brand { font-weight: 800; margin-bottom: 30px; font-size: 1.1rem; }
+.admin-sidebar a { display: block; padding: 12px 14px; border-radius: 10px; margin-bottom: 6px; color: #dbeafe; }
+.admin-sidebar a:hover, .admin-sidebar a.active { background: rgba(255,255,255,0.15); color: #fff; }
+.admin-main { flex: 1; padding: 30px; background: var(--bg-light); }
+.admin-topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+.cards-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 18px; margin-bottom: 30px; }
+.mini-card { background: #fff; border-radius: 16px; padding: 20px; box-shadow: 0 4px 14px rgba(0,0,0,0.06); }
+.mini-card .num { font-size: 1.8rem; font-weight: 800; color: var(--navy); }
+.mini-card .lbl { color: #6b7280; font-size: .85rem; }
+table.data-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 14px; overflow: hidden; }
+table.data-table th, table.data-table td { padding: 12px 14px; text-align: left; border-bottom: 1px solid #eee; font-size: .9rem; }
+table.data-table th { background: var(--navy); color: #fff; }
+.badge { padding: 5px 12px; border-radius: 20px; font-size: .78rem; font-weight: 700; }
+.badge-menunggu { background: #fef3c7; color: #92400e; }
+.badge-dipanggil { background: #dbeafe; color: #1e40af; }
+.badge-dilayani { background: #ede9fe; color: #5b21b6; }
+.badge-selesai { background: #dcfce7; color: #166534; }
+.badge-dibatalkan { background: #fee2e2; color: #991b1b; }
+.btn-sm { padding: 7px 14px; border-radius: 8px; border: none; font-weight: 600; font-size: .8rem; cursor: pointer; color: #fff; }
+.btn-panggil { background: var(--indigo); }
+.btn-selesai { background: #16a34a; }
+.btn-batal { background: #dc2626; }
+.table-scroll { overflow-x: auto; }
+
+footer.site-footer { text-align: center; padding: 26px; color: #6b7280; font-size: .85rem; background: #fff; border-top: 1px solid #eee; }
+
+@media (max-width: 860px) {
+  .navbar { padding: 12px 18px; }
+  .nav-links { position: fixed; top: 66px; left: 0; right: 0; background: var(--navy-dark); flex-direction: column; padding: 10px; display: none; }
+  .nav-links.open { display: flex; }
+  .hamburger { display: block; }
+  .hero h1 { font-size: 2rem; }
+  .admin-shell { flex-direction: column; }
+  .admin-sidebar { width: 100%; }
+}

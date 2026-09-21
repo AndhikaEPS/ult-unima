@@ -1,0 +1,10 @@
+# Mencegah directory listing
+Options -Indexes
+
+# Lindungi file konfigurasi sensitif agar tidak bisa diakses langsung
+<FilesMatch "\.(sql|md|log|env)$">
+    Require all denied
+</FilesMatch>
+
+# Redirect error umum ke halaman yang sesuai (opsional, sesuaikan bila perlu)
+ErrorDocument 404 /index.php

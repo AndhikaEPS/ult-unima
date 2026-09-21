@@ -1,0 +1,9 @@
+# Keamanan folder uploads: cegah eksekusi PHP/script apa pun di folder ini.
+# Folder ini hanya untuk menyimpan dokumen/foto yang diunggah pengguna.
+
+<FilesMatch "\.(php|php3|php4|php5|phtml|pl|py|cgi|sh|asp|aspx)$">
+    Require all denied
+</FilesMatch>
+
+Options -Indexes -ExecCGI
+AddHandler cgi-script .php .php3 .php4 .php5 .phtml .pl .py .cgi .sh .asp .aspx
