@@ -329,10 +329,36 @@ table.data-table th { background: var(--navy); color: #fff; }
 footer.site-footer { text-align: center; padding: 26px; color: #6b7280; font-size: .85rem; background: #fff; border-top: 1px solid #eee; }
 
 @media (max-width: 860px) {
-  .navbar { padding: 12px 18px; }
-  .nav-links { position: fixed; top: 66px; left: 0; right: 0; background: var(--navy-dark); flex-direction: column; padding: 10px; display: none; }
+  .navbar { padding: 10px 14px; }
+  .navbar .brand { font-size: .92rem; gap: 8px; }
+  .navbar .brand img { height: 32px; width: 32px; }
+  .btn-login { padding: 6px 16px; font-size: .82rem; }
+  .avatar-circle { width: 30px; height: 30px; font-size: 1rem; }
+  .nav-right { gap: 8px; }
+  .nav-links {
+    position: fixed;
+    top: 58px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
+    background: var(--navy-dark);
+    flex-direction: column;
+    padding: 6px 0;
+    display: none;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+    max-height: calc(100vh - 58px);
+    overflow-y: auto;
+  }
   .nav-links.open { display: flex; }
-  .hamburger { display: block; }
+  .nav-links a {
+    padding: 12px 20px;
+    border-radius: 0;
+    font-size: .9rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav-links a.active { background: rgba(255,255,255,0.12); }
+  .hamburger { display: block; font-size: 1.3rem; }
   .hero h1 { font-size: 2rem; }
   .admin-shell { flex-direction: column; }
   .admin-sidebar { width: 100%; }
